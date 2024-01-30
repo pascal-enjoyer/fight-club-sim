@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     public Transform playerBody;
     public float crouchingSpeed = 1.5f;
+    public Transform mainBone;
     bool isCrouching = false;
     //Скорость ходьбы
 
@@ -32,11 +33,13 @@ public class PlayerMovement : MonoBehaviour
     //Ускорение
     Vector3 velocity;
     //Проверка на состояние падения
-    bool isGrounded;
+    bool isGrounded = true;
     bool isJumped;
     // Update is called once per frame
     void Update()
     {
+        controller.transform.position = mainBone.transform.position;
+
         //Перемещение в осях xz
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
