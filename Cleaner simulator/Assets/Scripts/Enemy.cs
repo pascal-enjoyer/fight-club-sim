@@ -5,41 +5,42 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public Transform player;
-    public float radius = 20;
+    public Transform enemy;
+    
+    public float radius = 20f;
     private float distance;
     void Update()
     {
-        distance = Vector3.Distance(player.position, transform.position);
+        distance = Vector3.Distance(player.position, enemy.transform.position);
         if (distance >= radius)
         {
             GetComponent<NavMeshAgent>().enabled = false;
-            GetComponent<Animator>().SetBool("StayBool", true);
-            GetComponent<Animator>().SetBool("RunBool", false);
+            enemy.GetComponent<Animator>().SetBool("StayBool", true);
+            enemy.GetComponent<Animator>().SetBool("RunBool", false);
         }
         if (distance < radius & distance > 5)
         {
             GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<NavMeshAgent>().destination = player.position;
-
-            GetComponent<Animator>().SetBool("StayBool", false);
-            GetComponent<Animator>().SetBool("RunBool", true);
-            GetComponent<Animator>().SetBool("WalkBool", false);
+            enemy.GetComponent<Animator>().SetBool("StayBool", false);
+            enemy.GetComponent<Animator>().SetBool("RunBool", true);
+            enemy.GetComponent<Animator>().SetBool("WalkBool", false);
         }
-        if (distance <= 5 & distance > 2)
+        if (distance <= 5 & distance > 1.5)
         {
             GetComponent<NavMeshAgent>().enabled = true;
             GetComponent<NavMeshAgent>().destination = player.position;
 
-            GetComponent<Animator>().SetBool("RunBool", false);
-            GetComponent<Animator>().SetBool("WalkBool", true);
-            GetComponent<Animator>().SetBool("HitBool", false);
+            enemy.GetComponent<Animator>().SetBool("RunBool", false);
+            enemy.GetComponent<Animator>().SetBool("WalkBool", true);
+            enemy.GetComponent<Animator>().SetBool("HitBool", false);
         }
-        if (distance <= 2)
+        if (distance <= 1.5)
         {
             transform.LookAt(player);
             GetComponent<NavMeshAgent>().enabled = false;
-            GetComponent<Animator>().SetBool("HitBool", true);
-            GetComponent<Animator>().SetBool("WalkBool", false);
+            enemy.GetComponent<Animator>().SetBool("HitBool", true);
+            enemy.GetComponent<Animator>().SetBool("WalkBool", false);
         }
     }
 }
