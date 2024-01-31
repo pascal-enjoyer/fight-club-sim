@@ -37,7 +37,10 @@ public class Enemy : MonoBehaviour
         }
         if (distance <= 1.5)
         {
-            transform.LookAt(player);
+            // Передача координат X и Z в позицию игрока
+            Vector3 playerPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+            transform.LookAt(playerPosition);
+
             GetComponent<NavMeshAgent>().enabled = false;
             enemy.GetComponent<Animator>().SetBool("HitBool", true);
             enemy.GetComponent<Animator>().SetBool("WalkBool", false);
