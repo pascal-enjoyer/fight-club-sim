@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 830557809}
   - component: {fileID: 830557808}
   - component: {fileID: 830557811}
+  - component: {fileID: 830557812}
   m_Layer: 0
   m_Name: Main Character
   m_TagString: Untagged
@@ -812,6 +813,19 @@ CharacterController:
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &830557812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830557807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9157c82cb309a6a4fa30d1a8445d4cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1905830886}
 --- !u!1 &905827076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,6 +2178,11 @@ PrefabInstance:
 --- !u!4 &1905830885 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 722814fa37dd59e48aea7c0d13b43b1e, type: 3}
+  m_PrefabInstance: {fileID: 1553123556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1905830886 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 722814fa37dd59e48aea7c0d13b43b1e, type: 3}
   m_PrefabInstance: {fileID: 1553123556}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1906055157 stripped
