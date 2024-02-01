@@ -32,24 +32,24 @@ public class AnimationStateController : MonoBehaviour
         bool crouchPressed = Input.GetKey("left ctrl");
 
         #region Ходьба
-        if (!isWalking && forwardPressed && !crouchPressed)
+        if (!isWalking && forwardPressed)
         {
             animator.SetBool(isWalkingHash, true);
         }
 
-        if (isWalking && (!forwardPressed || crouchPressed)) 
+        if (isWalking && !forwardPressed) 
         { 
             animator.SetBool(isWalkingHash, false);
         }
         #endregion
 
         #region Бег
-        if (!isRunning && forwardPressed && runPressed && !crouchPressed)
+        if (!isRunning && forwardPressed && runPressed)
         {
             animator.SetBool(isRunningHash, true);
         }
 
-        if(isRunning && (!forwardPressed || !runPressed || crouchPressed))
+        if(isRunning && (!forwardPressed || !runPressed))
         {
             animator.SetBool(isRunningHash, false);
         }
@@ -68,7 +68,7 @@ public class AnimationStateController : MonoBehaviour
 
         #region Ходьба в приседе
 
-        if (!isCrouchWalking && crouchPressed && (forwardPressed || (forwardPressed && runPressed)))
+        if (!isCrouchWalking && crouchPressed && (forwardPressed || (forwardPressed && runPressed))))
         {
             animator.SetBool(isCrouchWalkingHash, true);
         }
