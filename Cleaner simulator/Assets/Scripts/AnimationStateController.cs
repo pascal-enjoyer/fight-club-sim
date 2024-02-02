@@ -9,6 +9,7 @@ public class AnimationStateController : MonoBehaviour
     int isRunningHash;
     int isCrouchStayingHash;
     int isCrouchWalkingHash;
+    int isJumpingHash;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class AnimationStateController : MonoBehaviour
         isRunningHash = Animator.StringToHash("RunBool");
         isCrouchStayingHash = Animator.StringToHash("CrouchStayBool");
         isCrouchWalkingHash = Animator.StringToHash("CrouchWalkBool");
+        isJumpingHash = Animator.StringToHash("JumpBool");
 
     }
 
@@ -27,6 +29,8 @@ public class AnimationStateController : MonoBehaviour
         bool isWalking = animator.GetBool(isWalkingHash);
         bool isCrouchStaying = animator.GetBool(isCrouchStayingHash);
         bool isCrouchWalking = animator.GetBool(isCrouchWalkingHash);
+        bool isJumping = animator.GetBool(isJumpingHash);
+        bool jumpPressed = Input.GetKey(KeyCode.Space);
         bool forwardPressed = Input.GetKey("w");
         bool runPressed = Input.GetKey("left shift");
         bool crouchPressed = Input.GetKey("left ctrl");
@@ -37,8 +41,8 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isWalkingHash, true);
         }
 
-        if (isWalking && !forwardPressed) 
-        { 
+        if (isWalking && !forwardPressed)
+        {
             animator.SetBool(isWalkingHash, false);
         }
         #endregion
@@ -49,7 +53,7 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isRunningHash, true);
         }
 
-        if(isRunning && (!forwardPressed || !runPressed))
+        if (isRunning && (!forwardPressed || !runPressed))
         {
             animator.SetBool(isRunningHash, false);
         }
@@ -60,7 +64,7 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool(isCrouchStayingHash, true);
         }
-        if(isCrouchStaying && !crouchPressed && ((forwardPressed || runPressed) || (!forwardPressed && !runPressed)))
+        if (isCrouchStaying && !crouchPressed && ((forwardPressed || runPressed) || (!forwardPressed && !runPressed)))
         {
             animator.SetBool(isCrouchStayingHash, false);
         }
@@ -68,13 +72,26 @@ public class AnimationStateController : MonoBehaviour
 
         #region Ходьба в приседе
 
-        if (!isCrouchWalking && crouchPressed && (forwardPressed || (forwardPressed && runPressed))))
+        if (!isCrouchWalking && crouchPressed && (forwardPressed || (forwardPressed && runPressed)))
         {
             animator.SetBool(isCrouchWalkingHash, true);
         }
-        if(isCrouchWalking && ((crouchPressed && (!forwardPressed && !runPressed)) || !crouchPressed))
+        if (isCrouchWalking && ((crouchPressed && (!forwardPressed && !runPressed)) || !crouchPressed || (crouchPressed && runPressed && !forwardPressed)))
         {
             animator.SetBool(isCrouchWalkingHash, false);
+        }
+
+        #endregion
+
+        #region Прыжок
+
+        if (!isJumping && jumpPressed && !crouchPressed)
+        {
+            animator.SetBool(isJumpingHash, true);
+        }
+        if (isJumping && !jumpPressed)
+        {
+            animator.SetBool(isJumpingHash, false);
         }
 
         #endregion

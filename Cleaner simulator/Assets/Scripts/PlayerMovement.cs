@@ -2,28 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-/*  
-    playerBody.GetComponent<Animator>().SetBool("CrouchDownBool", false);
-    playerBody.GetComponent<Animator>().SetBool("CrouchStayBool", false);
-    playerBody.GetComponent<Animator>().SetBool("CrouchWalkBool", false);
-    playerBody.GetComponent<Animator>().SetBool("CrouchUpBool", false);
-    playerBody.GetComponent<Animator>().SetBool("StayBool", false);
-    playerBody.GetComponent<Animator>().SetBool("WalkBool", false);
-    playerBody.GetComponent<Animator>().SetBool("RunBool", false);
-    playerBody.GetComponent<Animator>().SetBool("HitBool", false);
-    playerBody.GetComponent<Animator>().SetBool("JumpBool", false);
-*/
+
+
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform groundCheck;
     public LayerMask groundMask;
     public Transform playerBody;
-    public float crouchingSpeed = 1.5f;
-    public Transform mainBone;
-    bool isCrouching = false;
-    //Скорость ходьбы
 
+    public Transform mainBone;
+
+    //Скорость ходьбы
     public float speed = 3f;
     //Гравитация
     public float gravity = -9.8f;
@@ -34,10 +24,19 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     //Проверка на состояние падения
     bool isGrounded = true;
-    bool isJumped;
     // Update is called once per frame
     void Update()
     {
+        bool runPressed = Input.GetKey("left shift");
+        bool forwardPressed = Input.GetKey("w");
+        bool backwardPressed = Input.GetKey("s");
+        bool leftPressed = Input.GetKey("a");
+        bool rightPressed = Input.GetKey("d");
+
+        bool crouchDownPressed = Input.GetKeyDown(KeyCode.LeftControl);
+        bool crouchUpPressed = Input.GetKeyUp(KeyCode.LeftControl);
+        bool crouchPressed = Input.GetKey(KeyCode.LeftControl);
+        bool jumpPresseed = Input.GetKey(KeyCode.Space);
         controller.transform.position = mainBone.transform.position;
 
         //Перемещение в осях xz
@@ -49,9 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
         //Перемещение по y
         //Нажатие прыжка
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (jumpPresseed && isGrounded)
         {
-            isJumped = true;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
@@ -62,33 +60,35 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
-            isJumped = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !isCrouching)
+        if (crouchDownPressed)
         {
-            (speed, crouchingSpeed) = (crouchingSpeed, speed);
-            isCrouching = true;
+            controller.height = 7f;
+            controller.height = 6f;
+            controller.height = 5f;
+            controller.height = 4f;
+            controller.center /= 2f;
+            speed = 1.5f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl) && isCrouching)
+        if (crouchUpPressed)
         {
-            isCrouching = false;
-            (speed, crouchingSpeed) = (crouchingSpeed, speed);
+            controller.height = 5f;
+            controller.height = 6f;
+            controller.height = 7f;
+            controller.height = 8f;
+            controller.center *= 2;
+            speed = 3f;
         }
-        else if (!isCrouching && !isJumped) 
+        if ((forwardPressed || backwardPressed || leftPressed || rightPressed) && !crouchPressed)
         {
-            if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") && !isJumped)
+            if (runPressed)
             {
-                if (Input.GetKey(KeyCode.LeftShift) && (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")))
-                {
-                    speed = 7f;
-                }
-                else
-                {
-                    speed = 3f;
-                }
+                speed = 7f;
+            }
+            else
+            {
+                speed = 3f;
             }
         }
-
     }
 }
