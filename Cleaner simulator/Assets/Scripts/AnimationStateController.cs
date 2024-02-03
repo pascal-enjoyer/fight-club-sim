@@ -12,6 +12,13 @@ public class AnimationStateController : MonoBehaviour
     int isCrouchWalkingHash;
     int isJumpingHash;
     int isInAirHash;
+
+    int isRightWalkingHash;
+    int isLeftWalkingHash;
+    int isBackWalkingHash;
+    int isBackCrouchWalkingHash;
+    int isBackRunningHash;
+
     public Transform GroundCheck;
     public LayerMask GroundMask;
     // Start is called before the first frame update
@@ -23,7 +30,12 @@ public class AnimationStateController : MonoBehaviour
         isCrouchStayingHash = Animator.StringToHash("CrouchStayBool");
         isCrouchWalkingHash = Animator.StringToHash("CrouchWalkBool");
         isJumpingHash = Animator.StringToHash("JumpBool");
-        isInAirHash = Animator.StringToHash("FeltBool");
+        isInAirHash = Animator.StringToHash("InAirBool");
+
+        isRightWalkingHash = Animator.StringToHash("RightWalkBool");
+        isLeftWalkingHash = Animator.StringToHash("LeftWalkBool");
+        isBackWalkingHash = Animator.StringToHash("BackWalkBool");
+        isBackRunningHash = Animator.StringToHash("BackRunBool");
 
     }
 
@@ -38,15 +50,22 @@ public class AnimationStateController : MonoBehaviour
         bool isCrouchWalking = animator.GetBool(isCrouchWalkingHash);
         bool isInAir = animator.GetBool(isInAirHash);
         bool isJumping = animator.GetBool(isJumpingHash);
-
+        bool isRightWalking = animator.GetBool(isRightWalkingHash);
+        bool isLeftWalking = animator.GetBool(isLeftWalkingHash);
+        bool isBackWalking = animator.GetBool(isBackWalkingHash);
+        bool isBackRunning = animator.GetBool(isBackRunningHash);
 
         //Получение информации о нажитии кнопок
         bool OnGround = Physics.CheckSphere(GroundCheck.position, 0.4f, GroundMask);
         //Проверка падения
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
-        bool forwardPressed = Input.GetKey("w");
         bool runPressed = Input.GetKey("left shift");
         bool crouchPressed = Input.GetKey("left ctrl");
+        bool forwardPressed = Input.GetKey("w");
+        bool rightPressed = Input.GetKey("d");
+        bool leftPressed = Input.GetKey("a");
+        bool backPressed = Input.GetKey("s");
+        
 
         #region Ходьба
         if (!isWalking && forwardPressed)
@@ -58,10 +77,41 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool(isWalkingHash, false);
         }
+
+        if (!isBackWalking && backPressed)
+        {
+            animator.SetBool(isBackWalkingHash, true);
+        }
+
+        if(isBackWalking && !backPressed)
+        {
+            animator.SetBool(isBackWalkingHash, false);
+        }
+
+        if (!isRightWalking && rightPressed)
+        {
+            animator.SetBool(isRightWalkingHash, true);
+        }
+
+        if (isRightWalking && !rightPressed)
+        {
+            animator.SetBool(isRightWalkingHash, false);
+        }
+
+        if (!isLeftWalking && leftPressed)
+        {
+            animator.SetBool(isLeftWalkingHash, true);
+        }
+
+        if (isLeftWalking && !leftPressed)
+        {
+            animator.SetBool(isLeftWalkingHash, false);
+        }
+
         #endregion
 
         #region Бег
-        if (!isRunning && forwardPressed && runPressed)
+        if (!isRunning && (forwardPressed || rightPressed || leftPressed ) && runPressed)
         {
             animator.SetBool(isRunningHash, true);
         }
@@ -69,6 +119,16 @@ public class AnimationStateController : MonoBehaviour
         if (isRunning && (!forwardPressed || !runPressed))
         {
             animator.SetBool(isRunningHash, false);
+        }
+        
+        if (!isBackRunning && backPressed && runPressed)
+        {
+            animator.SetBool(isBackRunningHash, true);
+        }
+
+        if (isBackRunning && (!backPressed || !runPressed))
+        {
+            animator.SetBool(isBackRunningHash, false);
         }
         #endregion
 
@@ -96,7 +156,7 @@ public class AnimationStateController : MonoBehaviour
 
         #endregion
 
-        #region Прыжок
+        #region Прыжок и падение
 
         if (!isJumping && jumpPressed && !crouchPressed)
         {
@@ -107,9 +167,9 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isJumpingHash, false);
         }
 
-        #endregion
+        #endregion 
 
-        #region Падение
+        #region В воздухе
 
         if (!OnGround && !isInAir)
         {
