@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.24f1 (cf10dcf7010d) revision 13570268'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Professional' Language: 'ru' Physical Memory: 65377 MB
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'ru' Physical Memory: 16126 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.24f1\Editor\Unity.exe
+C:\Soft\Unity\2021.3.24f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Чмоня/Documents/GitHub/fight-club-sim/Cleaner simulator
+C:/Users/Makson/Documents/GitHub/fight-club-sim/Cleaner simulator
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54059
-Successfully changed project path to: C:/Users/Чмоня/Documents/GitHub/fight-club-sim/Cleaner simulator
-C:/Users/Чмоня/Documents/GitHub/fight-club-sim/Cleaner simulator
+54856
+Successfully changed project path to: C:/Users/Makson/Documents/GitHub/fight-club-sim/Cleaner simulator
+C:/Users/Makson/Documents/GitHub/fight-club-sim/Cleaner simulator
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,112 +47,109 @@ C:/Users/Чмоня/Documents/GitHub/fight-club-sim/Cleaner simulator
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [4596] Host "[IP] 25.37.205.123 [Port] 0 [Flags] 2 [Guid] 132125140 [EditorId] 132125140 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DH5D608) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [11496] Host "[IP] 192.168.22.148 [Port] 0 [Flags] 2 [Guid] 1412834001 [EditorId] 1412834001 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2KHKP40) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [4596] Host "[IP] 25.37.205.123 [Port] 0 [Flags] 2 [Guid] 132125140 [EditorId] 132125140 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-DH5D608) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [11496] Host "[IP] 192.168.22.148 [Port] 0 [Flags] 2 [Guid] 1412834001 [EditorId] 1412834001 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2KHKP40) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 76.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 48.92 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.24f1 (cf10dcf7010d)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Чмоня/Documents/GitHub/fight-club-sim/Cleaner simulator/Assets
+[Subsystems] Discovering subsystems at path C:/Soft/Unity/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Makson/Documents/GitHub/fight-club-sim/Cleaner simulator/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
-    Vendor:   NVIDIA
-    VRAM:     8038 MB
-    Driver:   31.0.15.4629
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x46a6)
+    Vendor:   Intel
+    VRAM:     8063 MB
+    Driver:   30.0.101.3111
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+Mono path[0] = 'C:/Soft/Unity/2021.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Soft/Unity/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Soft/Unity/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006905 seconds.
+Register platform support module: C:/Soft/Unity/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001830 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 69.03 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 55.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.703 seconds
+- Completed reload, in  0.451 seconds
 Domain Reload Profiling:
-	ReloadAssembly (703ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (451ms)
+		BeginReloadAssembly (56ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (504ms)
-			LoadAssemblies (85ms)
+		EndReloadAssembly (326ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (117ms)
+			SetupTypeCache (79ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (291ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (187ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (69ms)
+				RefreshPlugins (55ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (143ms)
-				ProcessInitializeOnLoadMethodAttributes (68ms)
+				ProcessInitializeOnLoadAttributes (87ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004602 seconds.
+Registered in 0.002531 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Чмоня\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Чмоня\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.052 seconds
+- Completed reload, in  0.759 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1053ms)
-		BeginReloadAssembly (120ms)
+	ReloadAssembly (760ms)
+		BeginReloadAssembly (101ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (820ms)
-			LoadAssemblies (89ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (575ms)
+			LoadAssemblies (71ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (276ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (363ms)
+			SetupTypeCache (187ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (252ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (255ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (176ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3058 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 24 unused Assets / (113.5 KB). Loaded Objects now: 3518.
 Memory consumption went from 107.8 MB to 107.7 MB.
-Total: 4.100600 ms (FindLiveObjects: 0.211300 ms CreateObjectMapping: 0.166400 ms MarkObjects: 3.603700 ms  DeleteObjects: 0.118200 ms)
+Total: 2.498100 ms (FindLiveObjects: 0.178900 ms CreateObjectMapping: 0.092800 ms MarkObjects: 2.120100 ms  DeleteObjects: 0.105100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -166,189 +163,50 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 299861.937357 seconds.
-  path: Assets/Character Models
-  artifactKey: Guid(1d299d944755ece49ac29d9024d70aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models using Guid(1d299d944755ece49ac29d9024d70aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '661ca950b34df1f94ce86e0ea0e2f6f4') in 0.016599 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Character Models/MainCharacter
-  artifactKey: Guid(3badd2ef786b0674d92576d216813ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/MainCharacter using Guid(3badd2ef786b0674d92576d216813ea9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '887f72854c23f94acaf8a282f466e14f') in 0.012179 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Animations
-  artifactKey: Guid(59c4bf641f04f344184958f5096d9701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations using Guid(59c4bf641f04f344184958f5096d9701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10e8b1c80a05c59766513b9f4d50cb1d') in 0.011051 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.214983 seconds.
-  path: Assets/Character Models/Enemies/tyler derden.fbx
-  artifactKey: Guid(722814fa37dd59e48aea7c0d13b43b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden.fbx using Guid(722814fa37dd59e48aea7c0d13b43b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0b70099d5aa9c4120b4675996d63d7a') in 0.223474 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.901756 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07196f6db882a7c7697169c29d216280') in 0.049048 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.878719 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d00142836d3b2af8ea6e80c29b7671b') in 0.042523 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.370333 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd958501c45815a593ce9ba831311d8ea') in 0.054141 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 33.969512 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c21ce453ba9a6201bb2c19aac398fc5') in 0.044870 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 373.019968 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a0398bc04a5ac4d6f7a57802278e44') in 0.046704 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 70.761813 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77121c4a2391a99006e340ad3bea1d43') in 0.047401 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 154.030529 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '878b7d4e43e0cff25714f3f4280ef0a4') in 0.057283 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 79.028222 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b760756da5ab19cb40d7c356481a6264') in 0.047132 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.269944 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2072ed0044bf8d311116f6792fe44072') in 0.046469 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.431774 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e58aa4e31c07dd8be8e6f56c45ac6718') in 0.046383 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 36.460149 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '165cefea54368fc3f3fc2f01bb88538a') in 0.043142 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 39.733710 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aedc4d6692dff8e6f10653fae3184cf') in 0.048908 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 152.404046 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '829d29de621fa1ee2a5b9833f5dbc06b') in 0.043435 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.161053 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1007b8d731def16f3e67028a0c933b5e') in 0.044836 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.637275 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00badba87e8c64cc0d7649c554d28667') in 0.043815 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 49.661127 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '693c4188eba9c62cf0f83ce4c7bc1c1c') in 0.047722 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 118.901429 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10bdc57d2b973f83fd9ae04c6f309d10') in 0.046739 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.234111 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3aaf83f696b880298527fbb2ca059fe') in 0.052725 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.366879 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 2.fbx
-  artifactKey: Guid(a3b90e741e388b843b57f95d015ba16d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 2.fbx using Guid(a3b90e741e388b843b57f95d015ba16d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3461d3eace92fb223f4a0d715f7846') in 0.048731 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004106 seconds.
+Registered in 0.004274 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Чмоня\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Чмоня\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.987 seconds
+- Completed reload, in  0.918 seconds
 Domain Reload Profiling:
-	ReloadAssembly (987ms)
-		BeginReloadAssembly (142ms)
+	ReloadAssembly (919ms)
+		BeginReloadAssembly (114ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (747ms)
-			LoadAssemblies (86ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (723ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (255ms)
+			SetupTypeCache (240ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (310ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (335ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (213ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				BeforeProcessingInitializeOnLoad (49ms)
+				ProcessInitializeOnLoadAttributes (246ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.81 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3053 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 17 unused Assets / (79.9 KB). Loaded Objects now: 3566.
-Memory consumption went from 125.2 MB to 125.1 MB.
-Total: 3.094300 ms (FindLiveObjects: 0.160200 ms CreateObjectMapping: 0.375100 ms MarkObjects: 2.484200 ms  DeleteObjects: 0.074000 ms)
+Unloading 17 unused Assets / (79.7 KB). Loaded Objects now: 3521.
+Memory consumption went from 107.7 MB to 107.7 MB.
+Total: 3.091000 ms (FindLiveObjects: 0.203200 ms CreateObjectMapping: 0.104300 ms MarkObjects: 2.682600 ms  DeleteObjects: 0.099500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -363,73 +221,64 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 72.005100 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '453e65fed6ce6738ddfd97b0efbc9310') in 0.149659 seconds 
+  Time since last request: 223916.674611 seconds.
+  path: Assets/Animations/new MainController.controller
+  artifactKey: Guid(152c7ce054a272949a3ed0b7a5ada45b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/new MainController.controller using Guid(152c7ce054a272949a3ed0b7a5ada45b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30796e04c04586625485482cb723ed89') in 0.059263 seconds 
 ========================================================================
-Received Import Request.
-  Time since last request: 18.978447 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d2778ee0befa85bc4016cc7ae103741') in 0.045145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.742866 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c732a58166e3a7c0bca1b9be00ebb3') in 0.043783 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.246155 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbbfaa15db8ba66ae0a4c244e42898b0') in 0.042648 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 44.896149 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '497a2a5764094d7e8fd509d2a5f9984d') in 0.051128 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.589653 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '413c162b180c30edf9db3d4923607543') in 0.044425 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 107.151931 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa503a9a407fb7f1ddff6c42462a7f72') in 0.045805 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 47.501966 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60d49e9fbd6caf349e443ea986786bca') in 0.049307 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 116.079570 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d90457714b1606bf2b25b350a7cd686') in 0.044943 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 51.692455 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90753975b83da29ed5253b541e69ca3b') in 0.046269 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.732605 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6547524a47780064146931c663976eed') in 0.045811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 133.635714 seconds.
-  path: Assets/Character Models/Enemies/tyler derden 1.fbx
-  artifactKey: Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Character Models/Enemies/tyler derden 1.fbx using Guid(c0bc8bd3a1e81b44bbfb642f33645947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7caf850a0a2a553e5f27d8029ceac035') in 0.047490 seconds 
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004289 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Makson\Documents\GitHub\fight-club-sim\Cleaner simulator\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.144 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1145ms)
+		BeginReloadAssembly (138ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (904ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (284ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (404ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (281ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3053 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 17 unused Assets / (79.8 KB). Loaded Objects now: 3525.
+Memory consumption went from 107.8 MB to 107.7 MB.
+Total: 3.765200 ms (FindLiveObjects: 0.221900 ms CreateObjectMapping: 0.126900 ms MarkObjects: 3.307500 ms  DeleteObjects: 0.107500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

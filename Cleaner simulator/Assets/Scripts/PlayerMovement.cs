@@ -62,21 +62,15 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
         if (crouchDownPressed)
-        {
-            controller.height = 7f;
+        { 
             controller.height = 6f;
-            controller.height = 5f;
-            controller.height = 4f;
-            controller.center /= 2f;
+            controller.center /= 8f/6f;
             speed = 1.5f;
         }
         if (crouchUpPressed)
         {
-            controller.height = 5f;
-            controller.height = 6f;
-            controller.height = 7f;
             controller.height = 8f;
-            controller.center *= 2;
+            controller.center *= 8f/6f;
             speed = 3f;
         }
         if ((forwardPressed || backwardPressed || leftPressed || rightPressed) && !crouchPressed)
