@@ -116,7 +116,7 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool(isRunningHash, true);
         }
 
-        if (isRunning && (!forwardPressed || !runPressed))
+        if (isRunning && ((!forwardPressed && !rightPressed && !leftPressed )|| !runPressed))
         {
             animator.SetBool(isRunningHash, false);
         }
@@ -129,6 +129,7 @@ public class AnimationStateController : MonoBehaviour
         if (isBackRunning && (!backPressed || !runPressed))
         {
             animator.SetBool(isBackRunningHash, false);
+
         }
         #endregion
 
