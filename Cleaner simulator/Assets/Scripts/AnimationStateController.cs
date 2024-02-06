@@ -1,3 +1,4 @@
+using Microsoft.Win32.SafeHandles;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -129,7 +130,6 @@ public class AnimationStateController : MonoBehaviour
         if (isBackRunning && (!backPressed || !runPressed))
         {
             animator.SetBool(isBackRunningHash, false);
-
         }
         #endregion
 
@@ -145,14 +145,27 @@ public class AnimationStateController : MonoBehaviour
         #endregion
 
         #region Õמהüבא ג ןנטסוהו
-
-        if (!isCrouchWalking && crouchPressed && (forwardPressed || (forwardPressed && runPressed)))
+        
+        if (!isCrouchWalking && crouchPressed && ((leftPressed || (leftPressed && runPressed))
+            || (rightPressed || (rightPressed && runPressed))
+            || (backPressed || (backPressed && runPressed))
+            || (forwardPressed || (forwardPressed && runPressed))))
         {
+            
             animator.SetBool(isCrouchWalkingHash, true);
+            if (backPressed)
+            {
+                animator.SetFloat("CrouchAnimationSpeed", -1);
+            }
         }
-        if (isCrouchWalking && ((crouchPressed && (!forwardPressed && !runPressed)) || !crouchPressed || (crouchPressed && runPressed && !forwardPressed)))
+        if (isCrouchWalking && (!crouchPressed || (crouchPressed && ((!rightPressed && !leftPressed && !forwardPressed && !backPressed) 
+            || (!rightPressed && !leftPressed && !forwardPressed && !backPressed && runPressed)))))
         {
             animator.SetBool(isCrouchWalkingHash, false);
+            if (animator.GetFloat("CrouchAnimationSpeed") == -1)
+            {
+                animator.SetFloat("CrouchAnimationSpeed", 1);
+            }
         }
 
         #endregion
