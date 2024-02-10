@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerInfo : MonoBehaviour
 {
-    public float currentHealth = 100f;
-    public float maxHealth = 100f;
+
+    [Range(0f, 1000f)] public float maxHealth = 100f;
+
+    [Range(0f, 1000f)] public float currentHealth = 100f;
 
 
     void Update()
