@@ -1,18 +1,51 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+[System.Serializable]
+public class InventorySlot
+{
+    public Item item;
+    public int cnt;
+    public InventorySlot(Item item, int cnt)
+    {
+        this.item = item;
+        this.cnt = cnt;
+    }
+}
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<InventorySlot> items = new List<InventorySlot>();
+    [SerializeField] private int size = 4;
+    [SerializeField] public UnityEvent OnInventoryChanged;
 
-    // Update is called once per frame
-    void Update()
+
+    public bool AddItems(Item item, int cnt = 1)
     {
-        
+        foreach (InventorySlot slot in items)
+        {
+
+        }
+        if (items.Count >= size)
+        {
+            return false;
+        }
+        InventorySlot new_slot = new InventorySlot(item, cnt);
+        items.Add(new_slot);
+        OnInventoryChanged.Invoke();
+        return true;
+    }
+    public Item GetItem(int i) {
+        return i < items.Count ? items[i].item : null;
+    }
+    public int GetCount (int i)
+    {
+        return i < items.Count ? items[i].cnt : 0;
+    }
+    public int GetSize()
+    {
+        return items.Count;
     }
 }
