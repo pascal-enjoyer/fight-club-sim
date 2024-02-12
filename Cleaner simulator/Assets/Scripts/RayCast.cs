@@ -33,7 +33,6 @@ public class RayCast : MonoBehaviour
                         Destroy(hit.transform.gameObject);
                     else
                     {
-                        collectingText.text = $"Не хватает места";
                     }
                 }
             }

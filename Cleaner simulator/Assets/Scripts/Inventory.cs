@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,16 +27,27 @@ public class Inventory : MonoBehaviour
     {
         foreach (InventorySlot slot in items)
         {
-
+            if (slot.item.id == item.id)
+            {
+                if (item.maxCountInInventory >= cnt + slot.cnt)
+                {
+                    slot.cnt += cnt;
+                    OnInventoryChanged.Invoke();
+                    return true;
+                }
+            }
         }
-        if (items.Count >= size)
+
+        if (size <= items.Count)
         {
             return false;
         }
-        InventorySlot new_slot = new InventorySlot(item, cnt);
-        items.Add(new_slot);
+        InventorySlot newSlot = new InventorySlot(item, cnt);
+        
+        items.Add(newSlot);
         OnInventoryChanged.Invoke();
         return true;
+        
     }
     public Item GetItem(int i) {
         return i < items.Count ? items[i].item : null;
