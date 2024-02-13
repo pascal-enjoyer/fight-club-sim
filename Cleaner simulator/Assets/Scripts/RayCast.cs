@@ -22,14 +22,14 @@ public class RayCast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.GetComponent<Item>() != null) 
+            if (hit.transform.gameObject.GetComponent<CollectableItem>() != null) 
             {
-                ShowCollectingText(hit.transform.GetComponent<Item>().itemName);
+                ShowCollectingText(hit.transform.GetComponent<Item>().itemName); // тут ошибка
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     
                     var inventory = transform.GetComponent<Inventory>();
-                    if (inventory.AddItems(hit.transform.GetComponent<Item>(), 1))
+                    if (inventory.AddItems(hit.transform.gameObject.GetComponent<CollectableItem>().GetComponent<Item>(), hit.transform.gameObject.GetComponent<CollectableItem>().amount))
                         Destroy(hit.transform.gameObject);
                     else
                     {
