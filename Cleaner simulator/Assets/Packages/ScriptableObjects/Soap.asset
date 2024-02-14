@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Soap
   m_EditorClassIdentifier: 
   id: 1
-  icon: {fileID: 21300000, guid: 2084d5824ca19d7419c39ad04f25af7a, type: 3}
+  icon: {fileID: 21300000, guid: f73a22e9cc8c62d44bc2552ff1229065, type: 3}
   itemName: Soap
   maxCountInInventory: 4
