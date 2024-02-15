@@ -31,9 +31,6 @@ public class RayCast : MonoBehaviour
                     var inventory = transform.GetComponent<Inventory>();
                     if (inventory.AddItems(hit.transform.gameObject.GetComponent<CollectableItem>().item, hit.transform.gameObject.GetComponent<CollectableItem>().count))
                         Destroy(hit.transform.gameObject);
-                    else
-                    {
-                    }
                 }
             }
             else
@@ -42,6 +39,7 @@ public class RayCast : MonoBehaviour
             }
         }
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red);
+        
     }
     private void ShowCollectingText(string objName)
     {
@@ -51,4 +49,5 @@ public class RayCast : MonoBehaviour
     {
         collectingText.text = "";
     }
+    
 }

@@ -48,7 +48,15 @@ public class Inventory : MonoBehaviour
         OnInventoryChanged.Invoke();
         return true;
         
-    }
+    }/*
+    public bool DeleteItem(Item item, int cnt = 1)
+    {
+        foreach (InventorySlot slot in items)
+        {
+            if (slot.item )
+        }
+        return true;
+    }*/
     public Item GetItem(int i) {
         return i < items.Count ? items[i].item : null;
     }
@@ -59,5 +67,9 @@ public class Inventory : MonoBehaviour
     public int GetSize()
     {
         return items.Count;
+    }
+    public bool IsEmptySlot(int i)
+    {
+        return items[i].cnt == 0 ? false : true;
     }
 }
