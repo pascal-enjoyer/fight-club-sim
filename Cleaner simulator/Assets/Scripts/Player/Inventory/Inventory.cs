@@ -48,15 +48,27 @@ public class Inventory : MonoBehaviour
         OnInventoryChanged.Invoke();
         return true;
         
-    }/*
-    public bool DeleteItem(Item item, int cnt = 1)
+    }
+    public bool DeleteItems(int currentSlotId, int cnt = 1)
     {
-        foreach (InventorySlot slot in items)
+        if (items.Count > currentSlotId && items[currentSlotId].cnt >= cnt)
         {
-            if (slot.item )
+            items[currentSlotId].cnt -= cnt;
+
+            OnInventoryChanged.Invoke();
+            if (items[currentSlotId].cnt == 0)
+            {
+                items.RemoveAt(currentSlotId);
+                items.RemoveAll(s => s == null);
+                OnInventoryChanged.Invoke();
+            }
+            return true;
         }
-        return true;
-    }*/
+        else
+        {
+            return false;
+        }
+    } //персонажи для того чтобы опхилиться будут есть мыло
     public Item GetItem(int i) {
         return i < items.Count ? items[i].item : null;
     }
@@ -68,8 +80,13 @@ public class Inventory : MonoBehaviour
     {
         return items.Count;
     }
-    public bool IsEmptySlot(int i)
+    public int GetSlotId(int i)
     {
-        return items[i].cnt == 0 ? false : true;
+        if (i < items.Count && items[i] != null)
+        {
+            return items[i].item.id;
+        }
+        else return 0;
     }
+    
 }

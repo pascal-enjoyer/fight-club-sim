@@ -353,6 +353,7 @@
 "Assets/Scripts/Player/Inventory/Inventory.cs"
 "Assets/Scripts/Player/Inventory/InventoryUI.cs"
 "Assets/Scripts/Player/Inventory/Item.cs"
+"Assets/Scripts/Player/Inventory/WeaponItem.cs"
 "Assets/Scripts/Player/MouseMovement.cs"
 "Assets/Scripts/Player/PlayerInfo.cs"
 "Assets/Scripts/Player/PlayerMovement.cs"
