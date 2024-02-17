@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
 
     public bool AddItems(Item item, int cnt = 1)
     {
+        
         foreach (InventorySlot slot in items)
         {
             if (slot.item.id == item.id)

@@ -14,5 +14,6 @@ public class Item : ScriptableObject
     public bool HealItem = false;
     [Range(0, 100f)] public int HPtoHeal = 0;
     public bool Weapon = false;
+    [Range(0, 100f)] public int Damage = 0;
 
 }

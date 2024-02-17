@@ -6,7 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public Transform player;
     public Transform enemy;
-    
+    public float Currenthealth = 100f;
+    public float Damage = 20f;
     public float radius = 20f;
     private float distance;
     void Update()
