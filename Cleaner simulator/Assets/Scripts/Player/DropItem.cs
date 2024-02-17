@@ -20,20 +20,18 @@ public class DropItem : MonoBehaviour
 
         currentSlotId = transform.GetComponent<WeaponSwitch>().currentSlot;
         var inventory = transform.GetComponent<Inventory>();
-        try
+        if (inventory.GetSlotId(currentSlotId) != 0)
         {
             var item = inventory.GetItem(currentSlotId);
             foreach (CollectableItem t in ItemPrefabs)
             {
-                if (t.item.id == item.id) {
+                if (t.item.id == item.id)
+                {
                     Instantiate(t, transform.position += transform.forward * 2f + transform.up * 1f, Quaternion.Euler(transform.rotation.eulerAngles));
                 }
             }
+            inventory.DeleteItems(currentSlotId, 1);
         }
-        catch {
-            
-        }
-        inventory.DeleteItems(currentSlotId, 1);
 
     }
 

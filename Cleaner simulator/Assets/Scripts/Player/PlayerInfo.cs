@@ -10,8 +10,4 @@ public class PlayerInfo : MonoBehaviour
     [Range(0f, 1000f)] public float currentHealth = 100f;
 
 
-    void Update()
-    {
-        
-    }
 }

@@ -52,8 +52,10 @@ public class WeaponSwitch : MonoBehaviour
         }
         SelectWeapon();
     }
-    void SelectWeapon()
+    public void SelectWeapon()
     {
+            var inventory = transform.GetComponent<Inventory>();
+        itemId = inventory.GetSlotId(currentSlot);
         if (itemId == 0)
         {
             foreach (Transform weapon in Hand)

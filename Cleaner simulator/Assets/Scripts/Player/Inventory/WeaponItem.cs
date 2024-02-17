@@ -5,5 +5,4 @@ using UnityEngine;
 public class WeaponItem : MonoBehaviour
 {
     public Item item;
-
 }

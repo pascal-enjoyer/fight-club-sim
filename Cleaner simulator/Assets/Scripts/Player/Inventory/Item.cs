@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -9,4 +11,8 @@ public class Item : ScriptableObject
     public Sprite icon;
     public string itemName;
     public int maxCountInInventory;
+    public bool HealItem = false;
+    [Range(0, 100f)] public int HPtoHeal = 0;
+    public bool Weapon = false;
+
 }
