@@ -22,7 +22,6 @@ public class WeaponSwitch : MonoBehaviour
             var inventory = transform.GetComponent<Inventory>();
             itemId = inventory.GetSlotId(0);
             currentSlot = 0;
-
             OnWeaponSwitched.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -30,7 +29,6 @@ public class WeaponSwitch : MonoBehaviour
             var inventory = transform.GetComponent<Inventory>();
             itemId = inventory.GetSlotId(1);
             currentSlot = 1;
-
             OnWeaponSwitched.Invoke();
         }
 
@@ -39,7 +37,6 @@ public class WeaponSwitch : MonoBehaviour
             var inventory = transform.GetComponent<Inventory>();
             itemId = inventory.GetSlotId(2);
             currentSlot = 2;
-
             OnWeaponSwitched.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
@@ -47,14 +44,14 @@ public class WeaponSwitch : MonoBehaviour
             var inventory = transform.GetComponent<Inventory>();
             itemId = inventory.GetSlotId(3);
             currentSlot = 3;
-
             OnWeaponSwitched.Invoke();
         }
+
         SelectWeapon();
     }
     public void SelectWeapon()
     {
-            var inventory = transform.GetComponent<Inventory>();
+        var inventory = transform.GetComponent<Inventory>();
         itemId = inventory.GetSlotId(currentSlot);
         if (itemId == 0)
         {

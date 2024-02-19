@@ -10,6 +10,12 @@ public class InventorySlot
 {
     public Item item;
     public int cnt;
+
+    public InventorySlot()
+    {
+        item = null;
+        cnt = 0;
+    }
     public InventorySlot(Item item, int cnt)
     {
         this.item = item;
@@ -18,76 +24,97 @@ public class InventorySlot
 }
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private List<InventorySlot> items = new List<InventorySlot>();
-    [SerializeField] private int size = 4;
+    [SerializeField] public InventorySlot[] items;
+    [SerializeField] public int size = 4;
     [SerializeField] public UnityEvent OnInventoryChanged;
 
-
-    public bool AddItems(Item item, int cnt = 1)
+    private void Start()
     {
-        
-        foreach (InventorySlot slot in items)
-        {
-            if (slot.item.id == item.id)
+        items = new InventorySlot[size];
+    }
+    public bool AddItems(Item item, int cnt)
+    {
+        int currentSlotId = transform.GetComponent<WeaponSwitch>().currentSlot;
+        if (items[currentSlotId] != null && items[currentSlotId].cnt != 0) {
+            if (items[currentSlotId].item.id == item.id)
             {
-                if (item.maxCountInInventory >= cnt + slot.cnt)
-                {
-                    slot.cnt += cnt;
+                if (items[currentSlotId].cnt + cnt <= item.maxCountInInventory) {
+                    items[currentSlotId].cnt += cnt;
                     OnInventoryChanged.Invoke();
                     return true;
                 }
+                else
+                {
+                    return false;
+                }
             }
-        }
-
-        if (size <= items.Count)
-        {
-            return false;
-        }
-        InventorySlot newSlot = new InventorySlot(item, cnt);
-        
-        items.Add(newSlot);
-        OnInventoryChanged.Invoke();
-        return true;
-        
-    }
-    public bool DeleteItems(int currentSlotId, int cnt = 1)
-    {
-        if (items.Count > currentSlotId && items[currentSlotId].cnt >= cnt)
-        {
-            items[currentSlotId].cnt -= cnt;
-
-            OnInventoryChanged.Invoke();
-            if (items[currentSlotId].cnt == 0)
+            else //тут можно будет добавить чтоб айтем брался в другой слот если выбранный занят
             {
-                items.RemoveAt(currentSlotId);
-                items.RemoveAll(s => s == null);
-                OnInventoryChanged.Invoke();
+                return false;
             }
+        }
+        else
+        {
+            items[currentSlotId] = new InventorySlot(item, cnt);
+            OnInventoryChanged.Invoke();
+            return true;
+        }
+    }
+
+    public bool DeleteItems(int i, int cnt)
+    {
+        if (items[i] != null && items[i].cnt != 0)
+        {
+            items[i].cnt -= cnt;
+            if (items[i].cnt <= 0)
+            {
+                items[i] = null;
+            }
+            OnInventoryChanged.Invoke();
             return true;
         }
         else
         {
             return false;
         }
-    } //персонажи для того чтобы опхилиться будут есть мыло
-    public Item GetItem(int i) {
-        return i < items.Count ? items[i].item : null;
     }
-    public int GetCount (int i)
-    {
-        return i < items.Count ? items[i].cnt : 0;
-    }
-    public int GetSize()
-    {
-        return items.Count;
-    }
+
     public int GetSlotId(int i)
     {
-        if (i < items.Count && items[i] != null)
+        if (items[i] != null && items[i].cnt != 0)
         {
             return items[i].item.id;
         }
-        else return 0;
+        return 0;
+    }
+
+    public int GetCount(int i)
+    {
+        if (items[i] != null && items[i].cnt != 0)
+            return items[i].cnt;
+        return 0;
+    }
+
+    public Item GetItem(int i)
+    {
+        if (items[i] != null && items[i].cnt != 0)
+            return items[i].item;
+        return null;
+    }
+
+    public int GetSize()
+    {
+        int k = 0;
+        for (int i = 0; i < size;i++)
+        {
+            if (items[i] != null && items[i].cnt != 0)
+            {
+                k++;
+            }
+        }
+        return k;
     }
     
+
+
 }
