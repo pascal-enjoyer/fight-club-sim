@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bottle
   m_EditorClassIdentifier: 
   id: 3
-  icon: {fileID: 21300000, guid: 60faa5939f2c74542b788a1788cb703c, type: 3}
+  icon: {fileID: 21300000, guid: d3d36619d2a85eb44a8bb01644a694d0, type: 3}
   itemName: bottle
   maxCountInInventory: 2
   HealItem: 0
