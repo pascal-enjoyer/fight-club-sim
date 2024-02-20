@@ -2211,7 +2211,6 @@ GameObject:
   - component: {fileID: 830557816}
   - component: {fileID: 830557817}
   - component: {fileID: 830557818}
-  - component: {fileID: 830557819}
   m_Layer: 0
   m_Name: Main Character
   m_TagString: Untagged
@@ -2430,18 +2429,6 @@ MonoBehaviour:
   currentSlotId: 0
   inventory: {fileID: 830557815}
   playerInfo: {fileID: 830557813}
---- !u!114 &830557819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830557807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6e64cd40ec1e547b2fea8d271e89ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &863913043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,6 +2589,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &901068070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2183941562437835925, guid: c0bc8bd3a1e81b44bbfb642f33645947, type: 3}
+  m_PrefabInstance: {fileID: 1214655614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &901068072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901068070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e486055dc11dfa459a1077796dd33fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1639113685}
+--- !u!136 &901068073
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901068070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.01
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1 &902868372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4613,7 +4632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1639113682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4677,9 +4696,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639113681}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 5
+  m_Radius: 2
   m_Height: 8
   m_Direction: 1
   m_Center: {x: 0, y: 4, z: 0}
