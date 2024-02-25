@@ -6,6 +6,8 @@ using static UnityEditor.Progress;
 public class DropItem : MonoBehaviour
 {
     public int currentSlotId;
+    public float dropDistance = 2f;
+    public float dropHeight = 1f;
     public List<CollectableItem> ItemPrefabs = new List<CollectableItem>();
     private void Update()
     {
@@ -27,7 +29,7 @@ public class DropItem : MonoBehaviour
             {
                 if (t.item.id == item.id)
                 {
-                    Instantiate(t, transform.position += transform.forward * 2f + transform.up * 1f, Quaternion.Euler(transform.rotation.eulerAngles));
+                    Instantiate(t, transform.position + transform.forward * dropDistance + new Vector3(0, dropHeight, 0), Quaternion.Euler(transform.rotation.eulerAngles));
                 }
             }
             inventory.DeleteItems(currentSlotId, 1);

@@ -20,3 +20,6 @@ MonoBehaviour:
   HPtoHeal: 0
   Weapon: 0
   Damage: 0
+  Throwable: 1
+  bigItem: 0
+  smallItem: 1
