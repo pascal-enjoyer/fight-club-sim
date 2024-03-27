@@ -1,7 +1,3 @@
-using JetBrains.Annotations;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,23 +18,28 @@ public class InventorySlot
         this.cnt = cnt;
     }
 }
+
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] public InventorySlot[] items;
-    [SerializeField] public int size = 4;
+    [SerializeField] private InventorySlot[] items;
+    [SerializeField] private int size = 4;
     [SerializeField] public UnityEvent OnInventoryChanged;
 
     private void Start()
     {
         items = new InventorySlot[size];
     }
+
     public bool AddItems(Item item, int cnt)
     {
-        int currentSlotId = transform.GetComponent<WeaponSwitch>().currentSlot;
-        if (items[currentSlotId] != null && items[currentSlotId].cnt != 0) {
+        int currentSlotId = transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex();
+
+        if (items[currentSlotId] != null && items[currentSlotId].cnt != 0) 
+        {
             if (items[currentSlotId].item.id == item.id)
             {
-                if (items[currentSlotId].cnt + cnt <= item.maxCountInInventory) {
+                if (items[currentSlotId].cnt + cnt <= item.maxCountInInventory) 
+                {
                     items[currentSlotId].cnt += cnt;
                     OnInventoryChanged.Invoke();
                     return true;
@@ -50,6 +51,7 @@ public class Inventory : MonoBehaviour
             }
             else //тут можно будет добавить чтоб айтем брался в другой слот если выбранный занят
             {
+
                 return false;
             }
         }
@@ -88,7 +90,7 @@ public class Inventory : MonoBehaviour
         return 0;
     }
 
-    public int GetCount(int i)
+    public int GetItemCount(int i)
     {
         if (items[i] != null && items[i].cnt != 0)
             return items[i].cnt;
@@ -102,7 +104,7 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public int GetSize()
+    public int GetCount()
     {
         int k = 0;
         for (int i = 0; i < size;i++)
@@ -113,6 +115,11 @@ public class Inventory : MonoBehaviour
             }
         }
         return k;
+    }
+
+    public int GetSize()
+    {
+        return size;
     }
     
 

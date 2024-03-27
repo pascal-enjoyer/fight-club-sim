@@ -5,10 +5,12 @@ using static UnityEditor.Progress;
 
 public class DropItem : MonoBehaviour
 {
-    public int currentSlotId;
-    public float dropDistance = 2f;
-    public float dropHeight = 1f;
-    public List<CollectableItem> ItemPrefabs = new List<CollectableItem>();
+    [SerializeField] private int currentSlotId;
+    [SerializeField] private float dropDistance = 2f;
+    [SerializeField] private float dropHeight = 1f;
+
+    [SerializeField] public List<CollectableItem> ItemPrefabs = new List<CollectableItem>();
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G))
@@ -20,18 +22,24 @@ public class DropItem : MonoBehaviour
     private void DropItems()
     {
 
-        currentSlotId = transform.GetComponent<WeaponSwitch>().currentSlot;
-        var inventory = transform.GetComponent<Inventory>();
+        currentSlotId = transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex();
+
+        Inventory inventory = transform.GetComponent<Inventory>();
+
         if (inventory.GetSlotId(currentSlotId) != 0)
         {
-            var item = inventory.GetItem(currentSlotId);
+            Item item = inventory.GetItem(currentSlotId);
+
             foreach (CollectableItem t in ItemPrefabs)
             {
+
                 if (t.item.id == item.id)
                 {
                     Instantiate(t, transform.position + transform.forward * dropDistance + new Vector3(0, dropHeight, 0), Quaternion.Euler(transform.rotation.eulerAngles));
                 }
+
             }
+
             inventory.DeleteItems(currentSlotId, 1);
         }
 

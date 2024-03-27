@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
+  m_IndirectSpecularColor: {r: 0.18310893, g: 0.22877873, b: 0.3066296, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0164c8a7738e44aa29c071dcdd1730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: {fileID: 177909772}
+  handWithWeapons: {fileID: 177909772}
   itemId: 0
   currentSlot: 0
   bigSlotOnBody: {fileID: 114818893}

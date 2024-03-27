@@ -43,9 +43,9 @@ public class RayCast : MonoBehaviour
                 Inventory inventory = transform.GetComponent<Inventory>();
                 EnemyInfo enemy = hit.transform.GetComponent<EnemyInfo>();
                 WeaponSwitch currentWeapon = transform.GetComponent<WeaponSwitch>();
-                if (Input.GetKeyDown(KeyCode.Mouse0) && inventory.GetItem(currentWeapon.currentSlot) && inventory.GetItem(currentWeapon.currentSlot).Weapon)
+                if (Input.GetKeyDown(KeyCode.Mouse0) && inventory.GetItem(currentWeapon.GetCurrentSlotIndex()) && inventory.GetItem(currentWeapon.GetCurrentSlotIndex()).Weapon)
                 {
-                    enemy.TakeDamage(inventory.GetItem(currentWeapon.currentSlot).Damage);
+                    enemy.TakeDamage(inventory.GetItem(currentWeapon.GetCurrentSlotIndex()).Damage);
                 }
             }
         }

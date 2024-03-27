@@ -39,9 +39,9 @@ public class ItemThrow : MonoBehaviour
     private void Throw()
     {
         var inventory = transform.GetComponent<Inventory>();
-        if (inventory.GetSlotId(transform.GetComponent<WeaponSwitch>().currentSlot) != 0 && inventory.GetItem(transform.GetComponent<WeaponSwitch>().currentSlot).Throwable)
+        if (inventory.GetSlotId(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()).Throwable)
         {
-            var item = inventory.GetItem(transform.GetComponent<WeaponSwitch>().currentSlot);
+            var item = inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex());
             foreach (CollectableItem t in transform.GetComponent<DropItem>().ItemPrefabs)
             {
                 if (t.item.id == item.id)
@@ -49,7 +49,7 @@ public class ItemThrow : MonoBehaviour
                     objectToThrow = t.gameObject;
                 }
             }
-            inventory.DeleteItems(transform.GetComponent<WeaponSwitch>().currentSlot, 1);
+            inventory.DeleteItems(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex(), 1);
 
             readyToThrow = false;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -9,16 +10,21 @@ using UnityEngine.UIElements;
 
 public class WeaponSwitch : MonoBehaviour
 {
-    public Transform Hand;
-    public int itemId;
-    public int currentSlot;
+    [SerializeField] private Transform handWithWeapons;
+
+    [SerializeField] private int itemId;
+    [SerializeField] private int currentSlot;
+
     public Transform bigSlotOnBody;
     public Transform leftSmallSlotOnBody;
     public Transform rightSmallSlotOnBody;
+
+    [SerializeField] private bool slotIsEmpty;
+
     public List<GameObject> weaponPrefabs = new List<GameObject>();
     
-    
     [SerializeField] public UnityEvent OnWeaponSwitched;
+
     public void Start()
     {
         SelectWeapon();
@@ -26,37 +32,34 @@ public class WeaponSwitch : MonoBehaviour
 
     private void Update()
     {
+        
+        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            var inventory = transform.GetComponent<Inventory>();
-            itemId = inventory.GetSlotId(0);
-            currentSlot = 0;
-            OnWeaponSwitched.Invoke();
+            OnInventoryKeysDown(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            var inventory = transform.GetComponent<Inventory>();
-            itemId = inventory.GetSlotId(1);
-            currentSlot = 1;
-            OnWeaponSwitched.Invoke();
+            OnInventoryKeysDown(2);
         }
-
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            var inventory = transform.GetComponent<Inventory>();
-            itemId = inventory.GetSlotId(2);
-            currentSlot = 2;
-            OnWeaponSwitched.Invoke();
+            OnInventoryKeysDown(3);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            var inventory = transform.GetComponent<Inventory>();
-            itemId = inventory.GetSlotId(3);
-            currentSlot = 3;
-            OnWeaponSwitched.Invoke();
+            OnInventoryKeysDown(4);
         }
 
         SelectWeapon();
+    }
+
+    private void OnInventoryKeysDown(int keyCode)
+    {
+        Inventory inventory = transform.GetComponent<Inventory>();
+        itemId = inventory.GetSlotId(keyCode);
+        currentSlot = keyCode;
+        OnWeaponSwitched.Invoke();
     }
     public void SelectWeapon()
     {
@@ -64,14 +67,14 @@ public class WeaponSwitch : MonoBehaviour
         itemId = inventory.GetSlotId(currentSlot);
         if (itemId == 0)
         {
-            foreach (Transform weapon in Hand)
+            foreach (Transform weapon in handWithWeapons)
             {
                 weapon.gameObject.SetActive(false);
             }
         }
         else
         {
-            foreach (Transform weapon in Hand)
+            foreach (Transform weapon in handWithWeapons)
             {
                 if (itemId == weapon.GetComponent<WeaponItem>().item.id)
                 {
@@ -84,7 +87,7 @@ public class WeaponSwitch : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < inventory.size; i++)
+        for (int i = 0; i < inventory.GetSize(); i++)
         {
             Item itemInInventory = inventory.GetItem(i);
             if (itemInInventory != null)
@@ -123,5 +126,10 @@ public class WeaponSwitch : MonoBehaviour
             }
         }
         // если предмет в инвентаре и не в руке, то проверить 
+    }
+
+    public int GetCurrentSlotIndex()
+    {
+        return currentSlot;
     }
 }

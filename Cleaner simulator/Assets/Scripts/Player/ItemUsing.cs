@@ -18,7 +18,7 @@ public class ItemUsing : MonoBehaviour
     {
         inventory = transform.GetComponent<Inventory>();
         playerInfo = transform.GetComponent<PlayerInfo>();
-        currentSlotId = transform.GetComponent<WeaponSwitch>().currentSlot;
+        currentSlotId = transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex();
         if (inventory.GetSlotId(currentSlotId) != 0 && inventory.GetItem(currentSlotId).HealItem)
         {
 

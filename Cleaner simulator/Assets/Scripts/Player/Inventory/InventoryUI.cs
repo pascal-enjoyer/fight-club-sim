@@ -18,7 +18,7 @@ public class InventoryUI : MonoBehaviour
             {
                 iconsOfItems[i].color = new Color(1, 1, 1, 1);
                 iconsOfItems[i].sprite = inventory.GetItem(i).icon;
-                counts[i].text = inventory.GetCount(i) > 1 ? inventory.GetCount(i).ToString() : "";
+                counts[i].text = inventory.GetItemCount(i) > 1 ? inventory.GetItemCount(i).ToString() : "";
             }
             else
             {
@@ -30,6 +30,6 @@ public class InventoryUI : MonoBehaviour
             }
         }
         
-        slotFrame.transform.position = iconsOfItems[inventory.GetComponentInParent<WeaponSwitch>().currentSlot].transform.position;
+        slotFrame.transform.position = iconsOfItems[inventory.GetComponentInParent<WeaponSwitch>().GetCurrentSlotIndex()].transform.position;
     }
 }
