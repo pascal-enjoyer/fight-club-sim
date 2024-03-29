@@ -36,19 +36,19 @@ public class WeaponSwitch : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            OnInventoryKeysDown(1);
+            OnInventoryKeysDown(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            OnInventoryKeysDown(2);
+            OnInventoryKeysDown(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            OnInventoryKeysDown(3);
+            OnInventoryKeysDown(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            OnInventoryKeysDown(4);
+            OnInventoryKeysDown(3);
         }
 
         SelectWeapon();
