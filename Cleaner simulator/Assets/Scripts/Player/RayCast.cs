@@ -1,64 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class RayCast : MonoBehaviour
 {
-    public TextMeshProUGUI collectingText;
-    public Camera mainCamera;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private UnityEvent OnRayHitCollectableItem;
+    [SerializeField] private UnityEvent OnRayHitEnemy;
+
+    [SerializeField] private Ray ray;
+
+    private void Start()
+    {
+        mainCamera = FindObjectOfType<Camera>();
+    }
 
     void Update()
     {
-        RayCastInfo();
+        CheckRayCast();
     }
-    private void RayCastInfo()
-    {
 
-        Ray ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+    private void CheckRayCast()
+    {
+        ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.transform.gameObject.GetComponent<CollectableItem>() != null) 
             {
-                ShowCollectingText(hit.transform.GetComponent<CollectableItem>().item.itemName);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    
-                    var inventory = transform.GetComponent<Inventory>();
-                    if (inventory.AddItems(hit.transform.gameObject.GetComponent<CollectableItem>().item, hit.transform.gameObject.GetComponent<CollectableItem>().count))
-                        Destroy(hit.transform.gameObject);
-                }
-            }
-            else
-            {
-                HideCollectingText();
+                OnRayHitCollectableItem.Invoke();
             }
             if (hit.transform.gameObject.GetComponent<EnemyInfo>() != null)
             {
-
-                Inventory inventory = transform.GetComponent<Inventory>();
-                EnemyInfo enemy = hit.transform.GetComponent<EnemyInfo>();
-                WeaponSwitch currentWeapon = transform.GetComponent<WeaponSwitch>();
-                if (Input.GetKeyDown(KeyCode.Mouse0) && inventory.GetItem(currentWeapon.GetCurrentSlotIndex()) && inventory.GetItem(currentWeapon.GetCurrentSlotIndex()).Weapon)
-                {
-                    enemy.TakeDamage(inventory.GetItem(currentWeapon.GetCurrentSlotIndex()).Damage);
-                }
+                OnRayHitEnemy.Invoke();
             }
         }
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red);
-        
-    }
+
+    }/*
+
     private void ShowCollectingText(string objName)
     {
-        collectingText.text = $"Press E to collect {objName}";
     }
+
     private void HideCollectingText()
     {
-        collectingText.text = "";
-    }
-    
+        CollectingText.text = "";
+    }*/
 }
+
+
+            /*
+                ShowCollectingText(hit.transform.GetComponent<CollectableItem>().item.itemName);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (inventory.AddItems(hit.transform.gameObject.GetComponent<CollectableItem>().item, hit.transform.gameObject.GetComponent<CollectableItem>().count))
+                        Destroy(hit.transform.gameObject);
+                }*/

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18310893, g: 0.22877873, b: 0.3066296, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1667,11 +1667,11 @@ GameObject:
   - component: {fileID: 830557811}
   - component: {fileID: 830557812}
   - component: {fileID: 830557813}
-  - component: {fileID: 830557814}
   - component: {fileID: 830557815}
   - component: {fileID: 830557816}
   - component: {fileID: 830557817}
   - component: {fileID: 830557818}
+  - component: {fileID: 830557820}
   m_Layer: 7
   m_Name: Main Character
   m_TagString: Untagged
@@ -1785,20 +1785,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
---- !u!114 &830557814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830557807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c85414a9b95d58546a0bb2c25bd71050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectingText: {fileID: 1454314519}
-  mainCamera: {fileID: 954635314}
 --- !u!114 &830557815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1843,9 +1829,7 @@ MonoBehaviour:
   handWithWeapons: {fileID: 177909772}
   itemId: 0
   currentSlot: 0
-  bigSlotOnBody: {fileID: 114818893}
-  leftSmallSlotOnBody: {fileID: 1003753177}
-  rightSmallSlotOnBody: {fileID: 1558594611}
+  slotIsEmpty: 0
   weaponPrefabs:
   - {fileID: 4641788206646407803, guid: b968f0a9bdba43f47824ecc63f567d3a, type: 3}
   - {fileID: 3812123137629090769, guid: 636f91b1743221948a95793ac641348d, type: 3}
@@ -1865,6 +1849,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  inventory: {fileID: 0}
 --- !u!114 &830557817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,6 +1904,25 @@ MonoBehaviour:
   throwKey: 323
   throwForce: 0.3
   throwUpwardForce: 0.1
+--- !u!114 &830557820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830557807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3715b79323b564ca0b708f7bf75e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  OnRayHitCollectableItem:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRayHitEnemy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &863913043
 GameObject:
   m_ObjectHideFlags: 0

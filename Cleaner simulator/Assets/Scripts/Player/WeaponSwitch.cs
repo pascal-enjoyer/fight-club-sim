@@ -15,9 +15,9 @@ public class WeaponSwitch : MonoBehaviour
     [SerializeField] private int itemId;
     [SerializeField] private int currentSlot;
 
-    public Transform bigSlotOnBody;
+/*    public Transform bigSlotOnBody;
     public Transform leftSmallSlotOnBody;
-    public Transform rightSmallSlotOnBody;
+    public Transform rightSmallSlotOnBody;*/
 
     [SerializeField] private bool slotIsEmpty;
 
@@ -25,15 +25,16 @@ public class WeaponSwitch : MonoBehaviour
     
     [SerializeField] public UnityEvent OnWeaponSwitched;
 
+    [SerializeField] private Inventory inventory;
+
     public void Start()
     {
+        inventory = transform.GetComponent<Inventory>();
         SelectWeapon();
     }
 
     private void Update()
     {
-        
-        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             OnInventoryKeysDown(0);
@@ -50,20 +51,18 @@ public class WeaponSwitch : MonoBehaviour
         {
             OnInventoryKeysDown(3);
         }
-
-        SelectWeapon();
     }
 
     private void OnInventoryKeysDown(int keyCode)
     {
-        Inventory inventory = transform.GetComponent<Inventory>();
         itemId = inventory.GetSlotId(keyCode);
         currentSlot = keyCode;
         OnWeaponSwitched.Invoke();
+        SelectWeapon();
     }
+
     public void SelectWeapon()
     {
-        var inventory = transform.GetComponent<Inventory>();
         itemId = inventory.GetSlotId(currentSlot);
         if (itemId == 0)
         {
@@ -72,6 +71,7 @@ public class WeaponSwitch : MonoBehaviour
                 weapon.gameObject.SetActive(false);
             }
         }
+
         else
         {
             foreach (Transform weapon in handWithWeapons)
@@ -87,6 +87,12 @@ public class WeaponSwitch : MonoBehaviour
                 }
             }
         }
+
+        // если предмет в инвентаре и не в руке, то проверить 
+    }
+/*
+    public void PlaceUnactiveWeaponsOnBody()
+    {
         for (int i = 0; i < inventory.GetSize(); i++)
         {
             Item itemInInventory = inventory.GetItem(i);
@@ -125,8 +131,7 @@ public class WeaponSwitch : MonoBehaviour
                 }
             }
         }
-        // если предмет в инвентаре и не в руке, то проверить 
-    }
+    }*/
 
     public int GetCurrentSlotIndex()
     {
