@@ -3,11 +3,19 @@ using UnityEngine;
 
 public class PopUpUI : MonoBehaviour
 {
-    public string CollectingText = "Press E to collect ";
-
-    private void ShowCollectingItemText()
+    public string CollectingText = "Collect ";
+    public TextMeshProUGUI PressEToCollect;
+    
+    public void ShowCollectingItemText()
     {
-        CollectingText.text = $"Press E to collect {objName}";
+        GameObject hittedObjectd = transform.GetComponent<RayCast>().GetHittedObject();
+        string objName = hittedObjectd.GetComponent<CollectableItem>().item.itemName;
+        PressEToCollect.text = CollectingText + objName;
+    }
+
+    public void HideCollectingItemText()
+    {
+        PressEToCollect.text = "";
     }
 
 }

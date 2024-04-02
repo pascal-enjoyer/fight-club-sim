@@ -9,7 +9,8 @@ public class RayCast : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private UnityEvent OnRayHitCollectableItem;
     [SerializeField] private UnityEvent OnRayHitEnemy;
-
+    [SerializeField] private RaycastHit hit;
+    private GameObject hitGameObject;
     [SerializeField] private Ray ray;
 
     private void Start()
@@ -25,37 +26,26 @@ public class RayCast : MonoBehaviour
     private void CheckRayCast()
     {
         ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
+        
+
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.gameObject.GetComponent<CollectableItem>() != null) 
+            hitGameObject = hit.transform.gameObject;
+            if (hitGameObject.GetComponent<CollectableItem>() != null)
             {
                 OnRayHitCollectableItem.Invoke();
             }
-            if (hit.transform.gameObject.GetComponent<EnemyInfo>() != null)
+            if (hitGameObject.GetComponent<EnemyInfo>() != null)
             {
                 OnRayHitEnemy.Invoke();
             }
         }
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red);
 
-    }/*
-
-    private void ShowCollectingText(string objName)
-    {
     }
 
-    private void HideCollectingText()
+    public GameObject GetHittedObject()
     {
-        CollectingText.text = "";
-    }*/
+        return hitGameObject;
+    }
 }
-
-
-            /*
-                ShowCollectingText(hit.transform.GetComponent<CollectableItem>().item.itemName);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (inventory.AddItems(hit.transform.gameObject.GetComponent<CollectableItem>().item, hit.transform.gameObject.GetComponent<CollectableItem>().count))
-                        Destroy(hit.transform.gameObject);
-                }*/
