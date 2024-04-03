@@ -57,7 +57,6 @@ public class WeaponSwitch : MonoBehaviour
     {
         itemId = inventory.GetSlotId(keyCode);
         currentSlot = keyCode;
-        OnWeaponSwitched.Invoke();
         SelectWeapon();
     }
 
@@ -87,8 +86,7 @@ public class WeaponSwitch : MonoBehaviour
                 }
             }
         }
-
-        // если предмет в инвентаре и не в руке, то проверить 
+        OnWeaponSwitched.Invoke();
     }
 /*
     public void PlaceUnactiveWeaponsOnBody()

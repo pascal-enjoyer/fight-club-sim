@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private List<Image> iconsOfItems = new List<Image>();
     [SerializeField] private List<Text> counts = new List<Text>();
     [SerializeField] private Image slotFrame;
+
     public void UpdateUI(Inventory inventory)
     {
         for (int i = 0; i < iconsOfItems.Count; i++)
@@ -29,7 +30,6 @@ public class InventoryUI : MonoBehaviour
                 counts[i].text = "";
             }
         }
-        
         slotFrame.transform.position = iconsOfItems[inventory.GetComponentInParent<WeaponSwitch>().GetCurrentSlotIndex()].transform.position;
     }
 }

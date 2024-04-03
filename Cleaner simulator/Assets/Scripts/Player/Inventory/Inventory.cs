@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private InventorySlot[] items;
     [SerializeField] private int size = 4;
-    [SerializeField] public UnityEvent OnInventoryChanged;
+    [SerializeField] private UnityEvent OnInventoryChanged;
 
     private void Start()
     {
@@ -121,7 +121,4 @@ public class Inventory : MonoBehaviour
     {
         return size;
     }
-    
-
-
 }

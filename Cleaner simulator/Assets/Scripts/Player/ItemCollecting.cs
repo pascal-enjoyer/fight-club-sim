@@ -11,8 +11,11 @@ public class ItemCollecting : MonoBehaviour
     [SerializeField] private int count;
     [SerializeField] private GameObject hit;
     [SerializeField] private CollectableItem collectableItemComponent;
-    [SerializeField] private UnityEvent OnItemCollected;
 
+    private void Start()
+    {
+        inventory = GetComponent<Inventory>();
+    }
 
     public void CollectItem()
     {
@@ -21,7 +24,6 @@ public class ItemCollecting : MonoBehaviour
 
             hit = transform.GetComponent<RayCast>().GetHittedObject();
 
-            
             collectableItemComponent = hit.transform.gameObject.GetComponent<CollectableItem>(); 
             item = collectableItemComponent.item;
             count = collectableItemComponent.count;
@@ -30,6 +32,7 @@ public class ItemCollecting : MonoBehaviour
             {
                 Destroy(hit);
             }
+
         }
     }
 }

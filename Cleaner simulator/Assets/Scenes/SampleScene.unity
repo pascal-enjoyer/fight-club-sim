@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18310893, g: 0.22877873, b: 0.3066296, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1816,6 +1816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 830557816}
+        m_TargetAssemblyTypeName: WeaponSwitch, Assembly-CSharp
+        m_MethodName: SelectWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &830557816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,6 +1879,9 @@ MonoBehaviour:
   currentSlotId: 0
   dropDistance: 2
   dropHeight: 1
+  OnItemDropped:
+    m_PersistentCalls:
+      m_Calls: []
   ItemPrefabs:
   - {fileID: 781211913901501605, guid: be05e99f1c62ef049a6b895ad92856f0, type: 3}
   - {fileID: 8482366327398908852, guid: 5486fe20ae24ce54b96a3c31d71bc48d, type: 3}
@@ -1980,21 +1995,6 @@ MonoBehaviour:
   count: 0
   hit: {fileID: 0}
   collectableItemComponent: {fileID: 0}
-  OnItemCollected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 830557821}
-        m_TargetAssemblyTypeName: PopUpUI, Assembly-CSharp
-        m_MethodName: HideCollectingItemText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &863913043
 GameObject:
   m_ObjectHideFlags: 0

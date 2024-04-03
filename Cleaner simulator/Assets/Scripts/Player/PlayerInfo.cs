@@ -1,25 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInfo : MonoBehaviour
 {
 
-    [Range(0f, 1000f)] public float maxHealth = 100f;
+    [Range(0f, 1000f)] public float MaxHealth = 100f;
 
-    [Range(0f, 1000f)] public float currentHealth = 100f;
+    [Range(0f, 1000f)] public float CurrentHealth = 100f;
 
-    public bool TakeDamage(float damage)
+    [SerializeField] private UnityEvent OnHealthEqualsZero;
+    
+    public void TakeDamage(float receivingDamage)
     {
-        if (currentHealth > 0)
+        if (CurrentHealth - receivingDamage > 0)
         {
-            currentHealth -= damage;
-            if (currentHealth <= 0)
-            {
-                return false;
-            }
-            return true;
+            CurrentHealth -= receivingDamage;
         }
-        return false;
+        else
+        {
+            CurrentHealth = 0;
+        }
+    }
+
+    public void TakeHeal(float receivingHeal)
+    {
+        if (CurrentHealth +  receivingHeal > MaxHealth) 
+        {
+            CurrentHealth = MaxHealth;
+        }
+        else
+        {
+            CurrentHealth += receivingHeal;
+        }
+    }
+
+    public int GetPlayerHpInPercents()
+    {
+        return (int)MaxHealth / (int)CurrentHealth;
     }
 }

@@ -18,6 +18,6 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        healthBar.fillAmount = playerInfo.currentHealth / playerInfo.maxHealth;
+        healthBar.fillAmount = playerInfo.GetPlayerHpInPercents();
     }
 }

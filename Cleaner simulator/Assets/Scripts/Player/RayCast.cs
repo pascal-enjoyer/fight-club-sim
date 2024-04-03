@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class RayCast : MonoBehaviour
 {
-    [SerializeField] private Camera mainCamera;
+    public Camera MainCamera;
     [SerializeField] private UnityEvent OnRayHitCollectableItem;
     [SerializeField] private UnityEvent OnRayHitEnemy;
     [SerializeField] private RaycastHit hit;
@@ -15,7 +15,6 @@ public class RayCast : MonoBehaviour
 
     private void Start()
     {
-        mainCamera = FindObjectOfType<Camera>();
     }
 
     void Update()
@@ -25,8 +24,7 @@ public class RayCast : MonoBehaviour
 
     private void CheckRayCast()
     {
-        ray = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        
+        ray = MainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -39,6 +37,7 @@ public class RayCast : MonoBehaviour
             {
                 OnRayHitEnemy.Invoke();
             }
+            
         }
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.red);
 
@@ -49,3 +48,5 @@ public class RayCast : MonoBehaviour
         return hitGameObject;
     }
 }
+
+// луч идет, когда попал на 

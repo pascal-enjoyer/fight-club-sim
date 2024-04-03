@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using static UnityEditor.Progress;
 
 public class DropItem : MonoBehaviour
@@ -8,7 +9,7 @@ public class DropItem : MonoBehaviour
     [SerializeField] private int currentSlotId;
     [SerializeField] private float dropDistance = 2f;
     [SerializeField] private float dropHeight = 1f;
-
+    [SerializeField] private UnityEvent OnItemDropped;
     [SerializeField] public List<CollectableItem> ItemPrefabs = new List<CollectableItem>();
 
     private void Update()
@@ -39,7 +40,7 @@ public class DropItem : MonoBehaviour
                 }
 
             }
-
+            OnItemDropped.Invoke();
             inventory.DeleteItems(currentSlotId, 1);
         }
 

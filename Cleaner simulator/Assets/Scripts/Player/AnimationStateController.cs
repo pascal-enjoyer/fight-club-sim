@@ -7,21 +7,22 @@ using UnityEngine;
 public class AnimationStateController : MonoBehaviour
 {
     public Animator animator;
-    int isWalkingHash;
-    int isRunningHash;
-    int isCrouchStayingHash;
-    int isCrouchWalkingHash;
-    int isJumpingHash;
-    int isInAirHash;
+    private int isWalkingHash;
+    private int isRunningHash;
+    private int isCrouchStayingHash;
+    private int isCrouchWalkingHash;
+    private int isJumpingHash;
+    private int isInAirHash;
 
-    int isRightWalkingHash;
-    int isLeftWalkingHash;
-    int isBackWalkingHash;
-    int isBackCrouchWalkingHash;
-    int isBackRunningHash;
+    private int isRightWalkingHash;
+    private int isLeftWalkingHash;
+    private int isBackWalkingHash;
+    private int isBackCrouchWalkingHash;
+    private int isBackRunningHash;
 
     public Transform GroundCheck;
     public LayerMask GroundMask;
+
     // Start is called before the first frame update
     void Start()
     {

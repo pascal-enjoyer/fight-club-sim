@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemUsing : MonoBehaviour
 {
     [SerializeField] private int currentSlotId;
     [SerializeField] private Inventory inventory;
     [SerializeField] private PlayerInfo playerInfo;
+    [SerializeField] private UnityEvent OnHealItemUsed;
+    // Сделать сигнал и присоеденить для каждого предмета (у каждого предмета свое испольование)
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -14,6 +15,7 @@ public class ItemUsing : MonoBehaviour
             UseHeal();
         }
     }
+
     void UseHeal()
     {
         inventory = transform.GetComponent<Inventory>();
@@ -21,16 +23,8 @@ public class ItemUsing : MonoBehaviour
         currentSlotId = transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex();
         if (inventory.GetSlotId(currentSlotId) != 0 && inventory.GetItem(currentSlotId).HealItem)
         {
-
-            var item = inventory.GetItem(currentSlotId);
-            if (playerInfo.currentHealth < playerInfo.maxHealth)
-            {
-                playerInfo.currentHealth += item.HPtoHeal;
-                if (playerInfo.currentHealth > playerInfo.maxHealth)
-                    playerInfo.currentHealth = playerInfo.maxHealth;
-                inventory.DeleteItems(currentSlotId, 1);
-            }
-
+            Item item = inventory.GetItem(currentSlotId);
+            playerInfo.TakeHeal(item.HPtoHeal);
         }
     }
 }

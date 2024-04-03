@@ -16,7 +16,5 @@ public class Item : ScriptableObject
     public bool Weapon = false;
     [Range(0, 100f)] public int Damage = 0;
     public bool Throwable = false;
-    public bool bigItem = false;
-    public bool smallItem = false;
 
 }
