@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
+  m_IndirectSpecularColor: {r: 0.18310893, g: 0.22877873, b: 0.3066296, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1785,8 +1785,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2719a44da8839b40922ede4f9237ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
+  MaxHealth: 100
+  CurrentHealth: 100
+  OnHealthEqualsZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &830557815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1904,9 @@ MonoBehaviour:
   currentSlotId: 0
   inventory: {fileID: 830557815}
   playerInfo: {fileID: 830557813}
+  OnHealItemUsed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &830557819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3715b79323b564ca0b708f7bf75e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
+  MainCamera: {fileID: 954635314}
   OnRayHitCollectableItem:
     m_PersistentCalls:
       m_Calls:

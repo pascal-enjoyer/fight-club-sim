@@ -30,15 +30,15 @@ public class ItemThrow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0) 
+        if (Input.GetKeyDown(throwKey) && readyToThrow && totalThrows > 0)
         {
             Throw();
         }
     }
 
-    private void Throw()
+    public void Throw()
     {
-        var inventory = transform.GetComponent<Inventory>();
+        Inventory inventory = transform.GetComponent<Inventory>();
         if (inventory.GetSlotId(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()).Throwable)
         {
             var item = inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex());
