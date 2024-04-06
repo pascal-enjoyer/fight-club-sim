@@ -6,14 +6,27 @@ public class PopUpUI : MonoBehaviour
     public string CollectingText = "Collect ";
     public TextMeshProUGUI PressEToCollect;
     
-    public void ShowCollectingItemText()
+    public void UpdateCollectingText(bool isHitted)
     {
-        GameObject hittedObjectd = transform.GetComponent<RayCast>().GetHittedObject();
+        switch (isHitted)
+        {
+            case true:
+                ShowCollectingItemText();
+                break;
+            case false:
+                HideCollectingItemText();
+                break;
+        }
+    }
+
+    private void ShowCollectingItemText()
+    {
+        GameObject hittedObjectd = GetComponent<RayCast>().GetHittedObject();
         string objName = hittedObjectd.GetComponent<CollectableItem>().item.itemName;
         PressEToCollect.text = CollectingText + objName;
     }
 
-    public void HideCollectingItemText()
+    private void HideCollectingItemText()
     {
         PressEToCollect.text = "";
     }

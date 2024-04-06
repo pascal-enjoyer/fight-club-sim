@@ -16,9 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f73a22e9cc8c62d44bc2552ff1229065, type: 3}
   itemName: Soap
   maxCountInInventory: 4
-  healCount: 0
+  healCount: 20
   damageCount: 0
   type: 1
-  OnItemUsed:
-    m_PersistentCalls:
-      m_Calls: []

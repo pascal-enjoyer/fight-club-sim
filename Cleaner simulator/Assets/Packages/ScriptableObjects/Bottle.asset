@@ -19,6 +19,3 @@ MonoBehaviour:
   healCount: 0
   damageCount: 0
   type: 2
-  OnItemUsed:
-    m_PersistentCalls:
-      m_Calls: []

@@ -13,7 +13,6 @@ public class Item : ScriptableObject
     public int damageCount;
 
     public ItemType type;
-    public UnityEvent<Item> OnItemUsed;
     
 
 }

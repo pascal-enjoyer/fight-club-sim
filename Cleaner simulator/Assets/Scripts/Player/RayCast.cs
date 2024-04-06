@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class RayCast : MonoBehaviour
 {
     public Camera MainCamera;
-    [SerializeField] private UnityEvent OnRayHitCollectableItem;
+    [SerializeField] private UnityEvent<bool> OnRayHitCollectableItem;
     [SerializeField] private UnityEvent OnRayHitEnemy;
     [SerializeField] private RaycastHit hit;
     private GameObject hitGameObject;
@@ -31,8 +31,10 @@ public class RayCast : MonoBehaviour
             hitGameObject = hit.transform.gameObject;
             if (hitGameObject.GetComponent<CollectableItem>() != null)
             {
-                OnRayHitCollectableItem.Invoke();
+                OnRayHitCollectableItem.Invoke(true);
             }
+            else
+                OnRayHitCollectableItem.Invoke(false);
             if (hitGameObject.GetComponent<EnemyInfo>() != null)
             {
                 OnRayHitEnemy.Invoke();

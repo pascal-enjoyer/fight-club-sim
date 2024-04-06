@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18310893, g: 0.22877873, b: 0.3066296, a: 1}
+  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1661,7 +1661,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830557810}
-  - component: {fileID: 830557819}
   - component: {fileID: 830557809}
   - component: {fileID: 830557808}
   - component: {fileID: 830557811}
@@ -1670,10 +1669,11 @@ GameObject:
   - component: {fileID: 830557815}
   - component: {fileID: 830557816}
   - component: {fileID: 830557817}
-  - component: {fileID: 830557818}
   - component: {fileID: 830557820}
   - component: {fileID: 830557822}
   - component: {fileID: 830557821}
+  - component: {fileID: 830557824}
+  - component: {fileID: 830557823}
   m_Layer: 7
   m_Name: Main Character
   m_TagString: Untagged
@@ -1889,44 +1889,6 @@ MonoBehaviour:
   - {fileID: 781211913901501605, guid: be05e99f1c62ef049a6b895ad92856f0, type: 3}
   - {fileID: 8482366327398908852, guid: 5486fe20ae24ce54b96a3c31d71bc48d, type: 3}
   - {fileID: 1875465680420825451, guid: ce9a341cc10871640b1ad80cd06d2e27, type: 3}
---- !u!114 &830557818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830557807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb53351be4955054ab3bdde7e09876e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentSlotId: 0
-  inventory: {fileID: 830557815}
-  playerInfo: {fileID: 830557813}
-  OnHealItemUsed:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &830557819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830557807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e2c0f0ea9fa1841a81844a267aa505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 954635316}
-  objectStartPoint: {fileID: 177909772}
-  objectToThrow: {fileID: 2273327882266992267, guid: ce9a341cc10871640b1ad80cd06d2e27, type: 3}
-  totalThrows: 200
-  throwCooldown: 1
-  throwKey: 323
-  throwForce: 0.3
-  throwUpwardForce: 0.1
 --- !u!114 &830557820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,10 +1905,10 @@ MonoBehaviour:
   OnRayHitCollectableItem:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 830557822}
-        m_TargetAssemblyTypeName: ItemCollecting, Assembly-CSharp
-        m_MethodName: CollectItem
-        m_Mode: 1
+      - m_Target: {fileID: 830557821}
+        m_TargetAssemblyTypeName: PopUpUI, Assembly-CSharp
+        m_MethodName: UpdateCollectingText
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2001,6 +1963,49 @@ MonoBehaviour:
   count: 0
   hit: {fileID: 0}
   collectableItemComponent: {fileID: 0}
+--- !u!114 &830557823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830557807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6ce898edb11f748bd5fc1092c470a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemUseKey: 323
+  inventory: {fileID: 0}
+  item: {fileID: 0}
+  currentSlotIndex: 0
+  playerInfo: {fileID: 0}
+  cam: {fileID: 954635316}
+  objectStartPoint: {fileID: 177909772}
+  objectToThrow: {fileID: 0}
+  throwCooldown: 1
+  throwForce: 0.25
+  throwUpwardForce: 0.25
+--- !u!114 &830557824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830557807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e2c0f0ea9fa1841a81844a267aa505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  objectStartPoint: {fileID: 0}
+  objectToThrow: {fileID: 0}
+  totalThrows: 0
+  throwCooldown: 0
+  throwKey: 323
+  throwForce: 0
+  throwUpwardForce: 0
 --- !u!1 &863913043
 GameObject:
   m_ObjectHideFlags: 0

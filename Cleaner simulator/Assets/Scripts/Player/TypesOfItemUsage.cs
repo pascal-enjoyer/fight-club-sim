@@ -11,6 +11,6 @@ public class TypesOfItemUsage : MonoBehaviour
     
     public void UseThrowableItem(Item item)
     {
-        GetComponent<ItemThrow>().Throw(item);
+        GetComponent<ItemThrow>().Throw();
     }
 }

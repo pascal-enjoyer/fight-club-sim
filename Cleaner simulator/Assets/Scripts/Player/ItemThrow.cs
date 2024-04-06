@@ -39,7 +39,7 @@ public class ItemThrow : MonoBehaviour
     public void Throw()
     {
         Inventory inventory = transform.GetComponent<Inventory>();
-        if (inventory.GetSlotId(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()).Throwable)
+        if (inventory.GetSlotId(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex()).type == ItemType.Throwable)
         {
             var item = inventory.GetItem(transform.GetComponent<WeaponSwitch>().GetCurrentSlotIndex());
             foreach (CollectableItem t in transform.GetComponent<DropItem>().ItemPrefabs)
