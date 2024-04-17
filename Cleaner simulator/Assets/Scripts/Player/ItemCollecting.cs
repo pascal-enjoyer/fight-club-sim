@@ -21,16 +21,17 @@ public class ItemCollecting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-
             hit = transform.GetComponent<RayCast>().GetHittedObject();
-
-            collectableItemComponent = hit.transform.gameObject.GetComponent<CollectableItem>(); 
-            item = collectableItemComponent.item;
-            count = collectableItemComponent.count;
-
-            if (inventory.AddItems(item, count))
+            collectableItemComponent = hit.transform.gameObject.GetComponent<CollectableItem>();
+            if (collectableItemComponent != null)
             {
-                Destroy(hit);
+                item = collectableItemComponent.item;
+                count = collectableItemComponent.count;
+
+                if (inventory.AddItems(item, count))
+                {
+                    Destroy(hit);
+                }
             }
 
         }

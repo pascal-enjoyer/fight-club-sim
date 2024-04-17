@@ -30,9 +30,7 @@ public class RayCast : MonoBehaviour
         {
             hitGameObject = hit.transform.gameObject;
             if (hitGameObject.GetComponent<CollectableItem>() != null)
-            {
                 OnRayHitCollectableItem.Invoke(true);
-            }
             else
                 OnRayHitCollectableItem.Invoke(false);
             if (hitGameObject.GetComponent<EnemyInfo>() != null)

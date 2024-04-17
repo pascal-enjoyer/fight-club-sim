@@ -107,8 +107,10 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        Debug.Log("Атака");
         agent.SetDestination(currentTarget.transform.position);
         transform.LookAt(currentTarget.transform);
+
         if (!alreadyAttacked)
         {
             // тут будет код атаки
