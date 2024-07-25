@@ -11,6 +11,7 @@ public class Item : ScriptableObject
 
     public int healCount;
     public int damageCount;
+    public GameObject itemPrefab;
 
     public ItemType type;
     

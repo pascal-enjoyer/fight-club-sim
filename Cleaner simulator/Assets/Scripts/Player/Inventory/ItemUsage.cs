@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ItemUsage : MonoBehaviour
 {
@@ -11,6 +12,15 @@ public class ItemUsage : MonoBehaviour
     [SerializeField] private Inventory inventory;
     [SerializeField] private Item item;
     [SerializeField] private int currentSlotIndex;
+
+    [Header("Mop item usage")]
+
+
+    [SerializeField] private float mopUsageCooldown;
+    [SerializeField] private bool readyToUseMop = true;
+    [SerializeField] private float mopUsageDistance;
+
+    [SerializeField] private float mopPushForce;
 
     [Header("Heal Item Settings")]
 
@@ -27,7 +37,7 @@ public class ItemUsage : MonoBehaviour
     public float throwCooldown;
     public float throwForce;
     public float throwUpwardForce;
-    bool readyToThrow;
+    [SerializeField] bool readyToThrow = true;
 
     //распознать какой айтем я юзаю, по куррент слот индексу и проверке нажатия клавиши!!
 
@@ -39,14 +49,15 @@ public class ItemUsage : MonoBehaviour
             playerInfo = GetComponent<PlayerInfo>();
             currentSlotIndex = GetComponent<WeaponSwitch>().GetCurrentSlotIndex();
             item = inventory.GetItem(currentSlotIndex);
-            if (item != null) {
-                switch(item.type) 
+            if (item != null)
+            {
+                switch (item.type)
                 {
                     case ItemType.Heal:
                         UseHealItem();
                         break;
                     case ItemType.Mop:
-                        Debug.Log("Тут будет логика для швабры");
+                        UseMopItem();
                         break;
                     case ItemType.Throwable:
                         UseThrowItem();
@@ -70,7 +81,7 @@ public class ItemUsage : MonoBehaviour
 
     public void UseThrowItem()
     {
-        if (inventory.GetSlotId(GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && item.type == ItemType.Throwable)
+        if (inventory.GetSlotId(GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && item.type == ItemType.Throwable && readyToThrow)
         {
             foreach (CollectableItem t in GetComponent<DropItem>().ItemPrefabs)
             {
@@ -95,8 +106,30 @@ public class ItemUsage : MonoBehaviour
         }
     }
 
+    public void UseMopItem()
+    {
+        if (inventory.GetSlotId(GetComponent<WeaponSwitch>().GetCurrentSlotIndex()) != 0 && item.type == ItemType.Mop)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(cam.position, cam.forward, out hit, mopUsageDistance))
+            {
+                if (hit.collider.GetComponent<Blood>())
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+            }
+            Invoke(nameof(ResetMop), mopUsageCooldown);
+        }
+    }
+
     private void ResetThrow()
     {
         readyToThrow = true;
+    }
+
+
+    private void ResetMop()
+    {
+        readyToUseMop = true;
     }
 }

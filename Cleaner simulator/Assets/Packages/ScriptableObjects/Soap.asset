@@ -18,4 +18,5 @@ MonoBehaviour:
   maxCountInInventory: 4
   healCount: 20
   damageCount: 0
+  itemPrefab: {fileID: 919132149155446097, guid: 97f483a2a75aa314a81c40e4a973be00, type: 3}
   type: 1

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1831092, g: 0.22877946, b: 0.30663034, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -791,6 +790,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1271,6 +1271,7 @@ GameObject:
   - component: {fileID: 830557821}
   - component: {fileID: 830557824}
   - component: {fileID: 830557823}
+  - component: {fileID: 830557825}
   m_Layer: 7
   m_Name: Main Character
   m_TagString: Player
@@ -1576,6 +1577,10 @@ MonoBehaviour:
   inventory: {fileID: 0}
   item: {fileID: 0}
   currentSlotIndex: 0
+  mopUsageCooldown: 1
+  readyToUseMop: 1
+  mopUsageDistance: 3
+  mopPushForce: 0
   playerInfo: {fileID: 0}
   cam: {fileID: 954635316}
   objectStartPoint: {fileID: 177909772}
@@ -1583,6 +1588,7 @@ MonoBehaviour:
   throwCooldown: 1
   throwForce: 0.25
   throwUpwardForce: 0.25
+  readyToThrow: 1
 --- !u!114 &830557824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1603,6 +1609,21 @@ MonoBehaviour:
   throwKey: 323
   throwForce: 0
   throwUpwardForce: 0
+--- !u!114 &830557825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830557807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ca9fab6bce0d1449d9caf98b1a373d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bleedingTimeInSec: 5
+  bloodPrefab: {fileID: 1755787761095469841, guid: f6bad677b6181724a842315f612ec390, type: 3}
+  maxBloodSize: 4
 --- !u!1 &863913043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,9 +3461,9 @@ RectTransform:
   m_Father: {fileID: 482826262}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -648.08124, y: 372}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 311.91876, y: -123}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1834831693

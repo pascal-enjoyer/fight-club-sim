@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float walkPointRange;
 
     [SerializeField] private float walkPointReachingDistance = 1f;
+
+
 
     void Start()
     {
@@ -74,11 +77,11 @@ public class EnemyAI : MonoBehaviour
             currentTarget = null;
     }
 
-    private void Patroling() 
+    private void Patroling()
     {
-        if (!walkPointSet) 
+        if (!walkPointSet)
             SearchWalkPoint();
-        if (walkPointSet) 
+        if (walkPointSet)
             agent.SetDestination(walkPoint);
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f)
@@ -107,14 +110,18 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Debug.Log("јтака");
-        agent.SetDestination(currentTarget.transform.position);
-        transform.LookAt(currentTarget.transform);
+
+        agent.SetDestination(agent.transform.position);
+        Vector3 targetDirection = currentTarget.transform.position - transform.position;
+        targetDirection.y = 0; // „тобы сохранить поворот только по горизонтали
+        transform.rotation = Quaternion.LookRotation(targetDirection);
 
         if (!alreadyAttacked)
         {
             // тут будет код атаки
             alreadyAttacked = true;
+
+            currentTarget.GetComponent<bleeding>().StartBleed();
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }

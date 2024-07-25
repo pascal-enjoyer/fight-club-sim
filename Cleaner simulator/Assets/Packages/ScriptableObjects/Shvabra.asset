@@ -16,10 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 18b119b98ac5de6428bcea333f563091, type: 3}
   itemName: Shvabra
   maxCountInInventory: 1
-  HealItem: 0
-  HPtoHeal: 0
-  Weapon: 1
-  Damage: 20
-  Throwable: 0
-  bigItem: 1
-  smallItem: 0
+  healCount: 0
+  damageCount: 0
+  itemPrefab: {fileID: 919132149155446097, guid: d291ce54a05d8b44188cce54da5e5748, type: 3}
+  type: 0
